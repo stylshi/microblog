@@ -1,0 +1,21 @@
+2021-03-02 14:28:41,237 ERROR: Exception on /reset_password_request [POST] [in c:\users\sty_l\microblog\venv\lib\site-packages\flask\app.py:1892]
+Traceback (most recent call last):
+  File "c:\users\sty_l\microblog\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\sty_l\microblog\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\sty_l\microblog\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\sty_l\microblog\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\sty_l\microblog\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\sty_l\microblog\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\sty_l\microblog\app\routes.py", line 180, in reset_password_request
+    send_password_reset_email(user)
+  File "C:\Users\sty_l\microblog\app\email.py", line 14, in send_password_reset_email
+    token = user.get_reset_password_token()
+  File "C:\Users\sty_l\microblog\app\models.py", line 73, in get_reset_password_token
+    app.config['SECRET_KEY'], algorithm='HS256').decode('utf-8')
+AttributeError: 'str' object has no attribute 'decode'
